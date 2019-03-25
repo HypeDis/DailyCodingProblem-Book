@@ -68,7 +68,14 @@ def getSuffixes(arr):
     return list(reversed(suffixes))
 
 
+""" 
+getPrefixes is O(n)
+getSuffixes is O(n)
+getProductsNoDivision is O(n)
+total time complexity is O(n)
+spaceComplexity is S(n) 
+"""
+
 someArr = [1, 2, 3, 4, 5]
 
 print(getProductsNoDivision(someArr))
-

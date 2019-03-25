@@ -15,6 +15,7 @@ in order for the entire array to be sorted. For example, given [3, 7, 5, 6, 9], 
 import time;
 # yapf: enable
 
+
 #  my solution doesn't work if there are duplicate values
 def myWindow(arr):
     leftVal = arr[0]
@@ -23,9 +24,8 @@ def myWindow(arr):
     leftPointer, rightPointer = 0, len(arr) - 1
     isMovingLP, isMovingRP = True, True
 
-    while (
-        leftPointer < len(arr) - 1 and rightPointer > 0 and (isMovingLP or isMovingRP)
-    ):
+    while (leftPointer < len(arr) - 1 and rightPointer > 0
+           and (isMovingLP or isMovingRP)):
         # break conditions
         if leftPointer > rightPointer:
             return "sorted"
@@ -53,7 +53,8 @@ def myWindow(arr):
     # edge case where the min value is all the way right, or the max value is all the way left
     while leftPointer > 0 and arr[leftPointer - 1] > arr[rightPointer]:
         leftPointer -= 1
-    while rightPointer < len(arr) - 1 and arr[rightPointer + 1] < arr[leftPointer]:
+    while rightPointer < len(arr) - 1 and arr[rightPointer +
+                                              1] < arr[leftPointer]:
         rightPointer += 1
     return (leftPointer, rightPointer)
 
@@ -66,6 +67,7 @@ myArray = testData.myArray
 myArray = [3, 4, 5, 3, 2, 3]
 mySortedArray = testData.mySortedArray
 
+
 # anything smaller than and to the right of max_seen must be out of order
 # anything bigger than and to the left of min_seen must be out of order
 def solutionWindow(arr):
@@ -77,7 +79,7 @@ def solutionWindow(arr):
         max_seen = max(max_seen, arr[i])
         if arr[i] < max_seen:
             right = i
-    # range(start, stop(exclusive), step)
+    # syntax for range: range(start, stop(exclusive), step)
     for i in range(n - 1, -1, -1):
         min_seen = min(min_seen, arr[i])
         if arr[i] > min_seen:
@@ -85,24 +87,28 @@ def solutionWindow(arr):
     return left, right
 
 
+""" 
+ach for loop is O(n) time complexity
+only right and left are being updated so S(1) space complexity 
+"""
+
 myStart = time.time()
 print("myWindow", myWindow(myArray))
 myEnd = time.time()
-print("my time", str((myEnd - myStart) * 10 ** 6) + " ns")
+print("my time", str((myEnd - myStart) * 10**6) + " ns")
 
 solutionStart = time.time()
 print("solutionWindow", solutionWindow(myArray))
 solutionEnd = time.time()
-print("solution time", str((solutionEnd - solutionStart) * 10 ** 6) + " ns")
-
+print("solution time", str((solutionEnd - solutionStart) * 10**6) + " ns")
 
 print("\n")
 myStart = time.time()
 print("myWindow", myWindow(mySortedArray))
 myEnd = time.time()
-print("my time", str((myEnd - myStart) * 10 ** 6) + " ns")
+print("my time", str((myEnd - myStart) * 10**6) + " ns")
 
 solutionStart = time.time()
 print("solutionWindow", solutionWindow(mySortedArray))
 solutionEnd = time.time()
-print("solution time", str((solutionEnd - solutionStart) * 10 ** 6) + " ns")
+print("solution time", str((solutionEnd - solutionStart) * 10**6) + " ns")
