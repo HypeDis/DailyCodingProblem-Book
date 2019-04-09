@@ -4,49 +4,13 @@
 # Follow-up: What if the elements can wrap around? For example, given [8, -1, 3, 4], return 15, as we choose the numbers 3,4, and 8 where the 8 is obtained from wrapping around.
 from functools import reduce
 
-# myArray = [8, -1, 3, 4]  # should be 15 with wrapping
+# myArray = [8, -1, 3, 4]  # 14, 15 with wrapping
 
 # any maximum sum will be between two positive numbers.
 # find all positive vale\ue indexes (if none exist return 0)
 # find the sum between all positive indexes
 # find the maximum sum
 
-""" def myMaxSubArray(nums):
-    n = len(nums)
-
-    # find the index of all positive integers
-    positiveIdxs = []
-    for i in range(n):
-        if nums[i] > 0:
-            positiveIdxs.append(i)
-
-    if not positiveIdxs:
-        return 0
-    sums = []
-    for idx1 in positiveIdxs:
-        for idx2 in positiveIdxs:
-            reduceArr = []
-            # join 2 slices of nums array together if wrapping back around
-            if idx2 < idx1:
-                reduceArr = nums[: idx2 + 1] + nums[idx1:]
-            else:
-                reduceArr = nums[idx1 : idx2 + 1]
-
-            # sums.append(reduce(lambda x, y: x + y, reduceArr))
-            sums.append(sum(reduceArr))
-
-    # search for the max sum
-    maxSum = 0
-    for currentSum in sums:
-        if currentSum > maxSum:
-            maxSum = currentSum
-
-    return maxSum
- """
-
-# what if we want to include negative sums?
-
-# print(myMaxSubArray(myArray))
 
 myArray = [34, -50, 42, 14, -5, 86]
 

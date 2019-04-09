@@ -4,22 +4,7 @@ Given an array of integers, return a new array where each element in the new arr
 example: [3,4,9, 6, 1] returns [1,1,2,1,0] 
 """
 
-
-def bruteForceSmallerToRight(nums):
-    smallerNumsArr = []
-    for idx, num in enumerate(nums):
-        smallerNums = 0
-
-        for num2 in nums[idx + 1:]:
-            if num2 < num:
-                smallerNums += 1
-        smallerNumsArr.append(smallerNums)
-    return smallerNumsArr
-
-
 myArray = [3, 4, 9, 6, 1]
-
-print(bruteForceSmallerToRight(myArray))
 
 import bisect
 
@@ -40,6 +25,7 @@ def solutionSmallerToRight(nums):
     # reversed() is O(n)
     # for loop is O(n)
     # bisect is O(logn) complexity
+    # insort is O(n) time complexity
     # total time complexity is O(nlogn)
     # space complexity is S(n)
 
