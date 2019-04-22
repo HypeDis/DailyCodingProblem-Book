@@ -10,6 +10,7 @@ class LinkedList:
             self.head = Node(val)
         else:
             self.insertNode(self.head, Node(val))
+        return self
 
     def insertNode(self, midNode, newNode):
         if not midNode.next:
