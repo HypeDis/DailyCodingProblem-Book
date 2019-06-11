@@ -1,4 +1,4 @@
-""" Given a linke list, alternate values so that they have a low, high, low, high... relationship. """
+""" Given a linked list, alternate values so that they have a low, high, low, high... relationship. """
 
 from classes import LinkedList
 

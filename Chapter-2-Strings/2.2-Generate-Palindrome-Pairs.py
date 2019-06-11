@@ -23,6 +23,7 @@ def generatePalindromePairs(wordsArr):
     # cycle through each word
     for i, word in enumerate(wordsArr):
         for char_idx in range(len(word)):
+            # split current word into prefix and suffix, split at the current char_idx
             prefix = word[:char_idx]
             suffix = word[char_idx:]
 
@@ -37,7 +38,8 @@ def generatePalindromePairs(wordsArr):
                     if prefixReversed == "":
                         result.append([wordsDict[prefixReversed], i])
             if isPalindrome(prefix):
-                if suffixReversed in wordsDict and wordsDict[suffixReversed] != i:
+                if suffixReversed in wordsDict and wordsDict[
+                        suffixReversed] != i:
                     result.append((wordsDict[suffixReversed], i))
     return result
 

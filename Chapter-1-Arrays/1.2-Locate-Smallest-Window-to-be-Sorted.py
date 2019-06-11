@@ -1,6 +1,6 @@
 """ 
 Given an array of integers that are out of order, determine the bounds of the smallest window that must be sorted 
-in order for the entire array to be sorted. For example, given [3, 7, 5, 6, 9], you should return (1,3).count
+in order for the entire array to be sorted. For example, given [3, 7, 5, 6, 9], you should return (1,3).
 
  """
 
@@ -11,10 +11,10 @@ in order for the entire array to be sorted. For example, given [3, 7, 5, 6, 9], 
 # if the pointers are at the same spot sort entire array
 # if left pointer reaches the end, array is already sorted.
 
-
 import testData
 
 myArray = testData.myArray
+
 
 # anything smaller than and to the right of max_seen must be out of order
 # anything bigger than and to the left of min_seen must be out of order

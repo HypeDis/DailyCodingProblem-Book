@@ -14,7 +14,7 @@ def printZigZag(str, k):
     zigZagArr = []
 
     # create empty rows to store chars
-    for i in range(k):
+    for _ in range(k):
         zigZagArr.append([])
 
     # loop through the string
@@ -49,4 +49,3 @@ def printZigZag(str, k):
 
 
 print(printZigZag("thisisazigzag", 5))
-

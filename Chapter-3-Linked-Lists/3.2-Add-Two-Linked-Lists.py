@@ -4,7 +4,7 @@
 
 from classes import LinkedList
 
-# 99
+# 11
 list1 = LinkedList(1)
 list1.insert(1)
 # 25
@@ -17,7 +17,7 @@ def addTwoLists(l1, l2):
     return getInteger(l1) + getInteger(l2)
 
 
-# take an integer and create a linke list
+# take an integer and create a linked list
 def listFromInteger(num):
     newList = LinkedList(num % 10)
     num = num // 10
